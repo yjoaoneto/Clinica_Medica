@@ -1,0 +1,170 @@
+object formCadastroPacientes: TformCadastroPacientes
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cadastro de Pacientes '
+  ClientHeight = 570
+  ClientWidth = 684
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Label2: TLabel
+    Left = 24
+    Top = 123
+    Width = 11
+    Height = 15
+    Caption = 'ID'
+  end
+  object Label3: TLabel
+    Left = 144
+    Top = 123
+    Width = 21
+    Height = 15
+    Caption = 'CPF'
+  end
+  object Label4: TLabel
+    Left = 24
+    Top = 198
+    Width = 89
+    Height = 15
+    Caption = 'Nome Completo'
+  end
+  object Label5: TLabel
+    Left = 24
+    Top = 275
+    Width = 37
+    Height = 15
+    Caption = 'Celular'
+  end
+  object Label6: TLabel
+    Left = 192
+    Top = 275
+    Width = 90
+    Height = 15
+    Caption = 'Data de Cadastro'
+  end
+  object Label7: TLabel
+    Left = 351
+    Top = 123
+    Width = 83
+    Height = 15
+    Caption = 'Buscar Paciente'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 684
+    Height = 81
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 680
+    object Label1: TLabel
+      Left = 24
+      Top = 15
+      Width = 282
+      Height = 37
+      Caption = 'Cadastro de Pacientes'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 361
+      Top = 28
+      Width = 310
+      Height = 25
+      DataSource = DM.DsPaciente
+      TabOrder = 0
+    end
+  end
+  object txtCpf: TDBEdit
+    Left = 144
+    Top = 144
+    Width = 121
+    Height = 23
+    DataField = 'cpf'
+    DataSource = DM.DsPaciente
+    MaxLength = 14
+    TabOrder = 2
+  end
+  object txtNome: TDBEdit
+    Left = 24
+    Top = 219
+    Width = 305
+    Height = 23
+    DataField = 'nome'
+    DataSource = DM.DsPaciente
+    TabOrder = 3
+  end
+  object txtCelular: TDBEdit
+    Left = 24
+    Top = 296
+    Width = 121
+    Height = 23
+    DataField = 'celular'
+    DataSource = DM.DsPaciente
+    MaxLength = 16
+    TabOrder = 4
+  end
+  object txtId: TDBEdit
+    Left = 24
+    Top = 144
+    Width = 89
+    Height = 23
+    DataField = 'id'
+    DataSource = DM.DsPaciente
+    TabOrder = 1
+  end
+  object txtDataCadastro: TDBEdit
+    Left = 192
+    Top = 296
+    Width = 121
+    Height = 23
+    DataField = 'data_cadastro'
+    DataSource = DM.DsPaciente
+    MaxLength = 10
+    ReadOnly = True
+    TabOrder = 5
+  end
+  object gridPaciente: TDBGrid
+    Left = 356
+    Top = 190
+    Width = 320
+    Height = 372
+    DataSource = DM.DsPaciente
+    TabOrder = 7
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Title.Caption = 'PACIENTES CADASTRADOS'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Visible = True
+      end>
+  end
+  object txtBusca: TEdit
+    Left = 351
+    Top = 144
+    Width = 320
+    Height = 23
+    TabOrder = 6
+    OnChange = txtBuscaChange
+  end
+end
