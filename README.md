@@ -6,6 +6,7 @@
 <p>Decidimos em consenso desenvolver este projeto com a finalizade de servir a alguma clínica médica, facilitando sua administração em relação aos seus pacientes, médicos e os agendamentos e serviços prestados. Estando aberto a receber aprimoramentos futuros de maneira simples.</p>
 
 
+
 <h3>Tecnologias utilizadas:</h3>
 <ul>
   <li>Ambiente de desenvolvimento dop software: Delphi, em tecnologia Pascal</li>
@@ -15,7 +16,7 @@
   <li>Inicializador do servidor local: Xammp</li>
 </ul>
 
-<br>
+
 
 <h3>Passo a passo de implementação da aplicação e como deve ser utilizado:</h3>
 
@@ -31,6 +32,10 @@
 
 <p>6° passo: Este passo é apenas caso ocorra o erro do seu computador não possuir o arquivo "lib.mysql" ou ele não estar sendo encontrado pelo banco. Para resolver isso, basta configurar o elemento de nome "TFDPhysMySQLDriverLink" e no seu parâmetro "VendorLib" indicar o caminho de pastas no computador em que o arquivo se encontra.</p>
 
+<p>7° passo: O último passo é colocar o servidor no ar, sendo ele o servidor local por meio do XAMMP, ou um servidor em nuvem, depois disso somente exercutar o arquivo .dproj (executável do Delhpi).</p>
+
+
+
 <h3>Requisitos Funcionais</h3>
 <ul>
   <li>Cadastrar pacientes novos em nosso sistema</li>
@@ -44,6 +49,8 @@
   <li>Excluir ou alterar dados do paciente no sistema (como endereço ou telefone de contato)</li>  
 </ul>
 
+
+
 <h3>Requisitos não-funcionais</h3>
 <ul>
   <li>SO compatível com a aplicação windows</li>
@@ -54,43 +61,37 @@
 </ul>
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# - Narrativa 1: Cadastro de pacientes no sistema e(ou) alteração de dados no sistema
+<h3>Cenários de uso e Critérios de Aceite</h3>
+<ul>
+  <li>Cadastro de pacientes no sistema, alteração e(ou) exclução de dados no sistema</li>
+  <li>Cadastro de médicos no sistema, alteração e(ou) exclução de dados no sistema</li>
+  <li>Tela de busca de dados no sistema por nome de pacientes e médicos</li>
+  <li>Realização de agendamentos de exames com a possibilidade de realizar cancelamentos e(ou) alterações de datas ou horários</li>
+  <li>Tela de busca individual de dados por escolha de campo de agendamentos já cadastrados para melhor controle, administração e organização da agenda da clínica</li>
+</ul>
 
-Como um funcionário de uma clínica 
-Quero ter facilidade e praticidade para cadastrar os dados dos pacientes da clínica e caso erre em algo
-quero poder corrigir sem muita dor de cabeça
-Para que o processo seja simples e prático
-
-
-# - Critérios de Aceite:
-
-O usuário deve abrir a aplicação e no canto superior esquerdo clicar no ícone de "Pacientes" no menu principal ou na interface principal do aplicativo;
-
-Lá deve ser cadastrado individualmente os dados de cada paciente "ID","Cpf","Nome Completo","Celular" e "Data de cadastro" que é puxada automaticamente do sistema do computador;
-
-Campos já com as máscaras pré-definidas não aceitam caracteres inválidos ou valores duplicados para ID,Cpf e Celular;
-
-Após todos os campos serem preenchidos (nenhum poderá ser vazio) o paciente será adicionado na lista e ficará visível na lista ao lado direito da tela;
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-# - Narrativa 2: Cadastro de médicos no sistema e(ou) alteração de dados no sistema
-
-Como um funcionário de uma clínica
-Quero ter facilidade para cadastrar também os médicos no sistema junto com suas especialidades e poder alterar seus dados caso necessário
-Para uma organização maior do sistema da clínica.
+<h4>1° - Cadastro de pacientes no sistema, alteração e(ou) exclução de dados no sistema</h4>
+<p>NARRATIVA: Como um funcionário de uma clínica quero ter facilidade e praticidade para cadastrar os dados dos pacientes da clínica e caso erre em algo desejo poder corrigir sem muita dor de cabeça para que o processo seja simples e prático.</p>
+<p>CRITÉRIOS DE ACEITE:</p>
+<ul>
+  <li>O usuário deve abrir a aplicação e no canto superior esquerdo clicar no ícone de "Pacientes" no menu principal ou na interface principal do aplicativo;</li>
+  <li>Lá deve ser cadastrado individualmente os dados de cada paciente "ID","Cpf","Nome Completo","Celular", "Endereço","Bairro","Cep" e "Data de cadastro" que é puxada automaticamente do sistema do computador;</li>
+  <li>Campos já com as máscaras pré-definidas não aceitam caracteres inválidos ou valores duplicados para ID,Cpf,Celular e Cep;</li>
+  <li>Após todos os campos serem preenchidos (nenhum poderá ser vazio) o paciente será adicionado na lista de cadastrados (dentro do banco de dados) e ficará visível na lista ao lado direito da tela;</li>
+</ul>
 
 
-# - Critérios de Aceite:
 
-O usuário deve abrir a aplicação e no canto superior esquerdo clicar no ícone de "Médicos" no menu principal ou na interface principal do aplicativo;
-
-Lá deve ser cadastrado individualmente os dados de cada paciente "ID","Nome do médico" e "Especialidade";
-
-Após todos os campos serem preenchidos (nenhum poderá ser vazio) o médico será adicionado na lista e ficará visível na lista ao lado direito da tela;
+<h4>2° - Cadastro de médicos no sistema, alteração e(ou) exclução de dados no sistema</h4>
+<p>NARRATIVA: Como um funcionário de uma clínica quero ter facilidade para cadastrar também os médicos no sistema junto com suas especialidades e poder alterar seus dados caso necessário para uma organização maior do sistema da clínica.</p>
+<p>CRITÉRIOS DE ACEITE:</p>
+<ul>
+  <li>O usuário deve abrir a aplicação e no canto superior esquerdo clicar no ícone de "Médicos" no menu principal ou na interface principal do aplicativo;</li>
+  <li>Lá deve ser cadastrado individualmente os dados de cada paciente "ID do médico","CRM","Nome do médico","Sexo","Especialidade","Turno" e "Telefone de Contato";</li>
+  <li>Campos já com as máscaras pré-definidas não aceitam caracteres inválidos ou valores duplicados para ID do médico,CRM e Telefone de Contato;</li>
+  <li>Após todos os campos serem preenchidos (nenhum poderá ser vazio) o médico será adicionado na lista de cadastrados (dentro do banco de dados) e também ficará visível na lista ao lado direito da tela;</li>
+</ul>
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
