@@ -94,44 +94,29 @@
 </ul>
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# - Narrativa 3: Busca por nome 
-
-Como um funcionário de uma clínica
-Quero ter uma praticidade em achar os nomes tanto dos pacientes tanto dos médicos cadastrados no sistema
-Para que as minhas atividades sejam mais fluidas
-
-
-# - Critérios de Aceite:
-
-Tanto na tela de "Pacientes" e na de "Médicos" o usuário terá um quadro junto a uma barra de busca muito intuitiva ao lado direito da tela;
-
-O Paciente será filtrado pelo seu nome, basta digitar seu nome completo ou parcialmente que ele será encontrado;
-
-O Médico será filtrado tanto pelo nome tanto por sua especialidade na tela de cadastrados com fácil uso;
+<h4>3º - Busca de dados cadastrados por parâmetros definidos</h4>
+<p>NARRATIVA: Como um funcionário de uma clínica quero ter praticidade em achar meus pacientes e médicos por nome ou qualquer outro campo a meu desejo, afim de corrigir um dado errado ou excluí-los do sistema com facilidade sem ter que procurá-los um a um em meu banco.</p>
+<p>CRITÉRIOS DE ACEITE:</p>
+<ul>
+  <li>Tanto na tela de "Pacientes" e na de "Médicos" o usuário terá um quadro junto a uma barra de busca muito intuitiva ao lado direito da tela;</li>
+  <li>O Paciente será filtrado pelo seu nome, basta digitar seu nome completo ou parcialmente que ele será encontrado;</li>
+  <li>O Médico será filtrado tanto pelo nome tanto por sua especialidade na tela de cadastrados com fácil uso;</li>
+</ul>
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# - Narrativa 4: Realizar agendamentos de exames
-
-Como um funcionário de uma clínica
-Quero poder realizar os agendamentos dos pacientes, não tendo que procurar nome a nome, somente pelo ID achando os pacientes, as especialidades serão associadas automaticamente aos médicos disponíveis
-podendo escolher os dias e horários disponíveis para a consulta
-Para que a organização prevaleça para que não ocorra choque de horários entre os pacientes
-
-
-# - Critérios de Aceite:
-
-O usuário deve abrir a aplicação e no canto superior esquerdo clicar no ícone de "Agendamentos" no menu principal ou na interface principal do aplicativo;
-
-Lá ele deverá preencher todos os campos que estão sinalizados com os dados do paciente que deseja realizar um exame e os dados do médico que realizará a consulta;
-
-Ao digitar o ID do paciente, o nome dele será puxado automaticamente do banco de dados, facilitando a busca. O mesmo ocorre com a especialidade do médico;
+<h4>4º - Realizar agendamentos de exames, alteração ou cancelamento de agendamentos</h4>
+<p>NARRATIVA: Como um funcionário de uma clínica quero ter praticidade para marcar os exames dos meus pacientes, com a possibilidade de alterar os dados do exame ou cancelá-los caso necessário.Tendo também uma tela somente para consulta individual de dados por escolha de campo..</p>
+<p>CRITÉRIOS DE ACEITE:</p>
+<ul>
+  <li>O usuário deve abrir a aplicação e no canto superior esquerdo deve clicar no ícone de "Agendamentos" ou na interface principal do aplicativo;</li>
+  <li>Lá deve ser cadastro deve ser realizado com os dados de identificação do paciente, o médico escolhido para o atendimento, o modelo de convênio (se será particular ou algum plano médico que cubra a consulta) e a data e horário do exame;</li>
+  <li>Após todos os campos serem preenchidos (nenhum poderá ser vazio) o agendamento será realizado e adicionado na lista de cadastrados (dentro do banco de dados) e também ficará visível na lista ao lado direito da tela;</li>
+  <li>No campo na parte inferior da tela, está disponível um campo apenas de consulta na tabela por campos de marcação de parâmetro para melhor visualizaçao dos exames agendados para melhor controle de organização;</li>
+</ul>
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <h3>Regras de negócio:</h3>
 
