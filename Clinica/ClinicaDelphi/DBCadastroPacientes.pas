@@ -18,11 +18,23 @@ type
     DsAgendamento: TDataSource;
     DsMedico: TDataSource;
     ConexaoBD: TFDConnection;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
     TbPacienteid: TIntegerField;
     TbPacientenome: TStringField;
     TbPacientecpf: TStringField;
     TbPacientecelular: TStringField;
     TbPacientedata_cadastro: TDateField;
+    TbPacienteendereco: TStringField;
+    TbPacientebairro: TStringField;
+    TbPacientecep: TStringField;
+    TbMedicoid: TIntegerField;
+    TbMediconome: TStringField;
+    TbMedicoespecialidade: TStringField;
+    TbMedicoturno: TStringField;
+    TbMedicocrm: TIntegerField;
+    TbMedicotelefone_medico: TStringField;
+    sqlConsulta: TFDQuery;
+    DsConsulta: TDataSource;
     TbAgendamento: TFDTable;
     TbAgendamentoid: TIntegerField;
     TbAgendamentoid_paciente: TIntegerField;
@@ -30,10 +42,7 @@ type
     TbAgendamentodata_exame: TDateField;
     TbAgendamentohora_exame: TStringField;
     TbAgendamentoespecialidade: TStringField;
-    TbMedicoid: TIntegerField;
-    TbMediconome: TStringField;
-    TbMedicoespecialidade: TStringField;
-    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    TbAgendamentoconvenio: TStringField;
     procedure TbPacienteAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }

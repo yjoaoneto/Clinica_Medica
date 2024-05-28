@@ -28,6 +28,7 @@ type
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Mdicos1Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     { Private declarations }
   public
@@ -58,6 +59,13 @@ begin
     FormAgendamentos.ShowModal;
 end;
 
+procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+     if Application.MessageBox('Deseja realmente sair do sistema?','Confirmação',MB_ICONQUESTION+MB_YESNO) = mrYES then
+
+     Application.Terminate;
+end;
+
 procedure TForm1.Mdicos1Click(Sender: TObject);
 begin
     FormMedicos.ShowModal;
@@ -75,6 +83,8 @@ end;
 
 procedure TForm1.Sair1Click(Sender: TObject);
 begin
+    if Application.MessageBox('Deseja realmente sair do sistema?','Confirmação',MB_ICONQUESTION+MB_YESNO) = mrYES then
+
    Application.Terminate;
 end;
 

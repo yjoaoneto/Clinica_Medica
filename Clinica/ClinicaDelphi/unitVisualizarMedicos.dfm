@@ -4,8 +4,8 @@ object FormMedicos: TFormMedicos
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'M'#233'dicos'
-  ClientHeight = 442
-  ClientWidth = 675
+  ClientHeight = 486
+  ClientWidth = 732
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,15 +21,15 @@ object FormMedicos: TFormMedicos
     Caption = 'Nome Completo'
   end
   object Label7: TLabel
-    Left = 327
+    Left = 383
     Top = 123
     Width = 139
     Height = 15
     Caption = 'Buscar M'#233'dico no Sistema'
   end
   object Label3: TLabel
-    Left = 24
-    Top = 259
+    Left = 191
+    Top = 251
     Width = 71
     Height = 15
     Caption = 'Especialidade'
@@ -41,14 +41,42 @@ object FormMedicos: TFormMedicos
     Height = 15
     Caption = 'ID do M'#233'dico'
   end
-  object Panel1: TPanel
+  object Label5: TLabel
+    Left = 24
+    Top = 315
+    Width = 31
+    Height = 15
+    Caption = 'Turno'
+  end
+  object Label6: TLabel
+    Left = 191
+    Top = 315
+    Width = 106
+    Height = 15
+    Caption = 'Telefone de Contato'
+  end
+  object Label8: TLabel
+    Left = 191
+    Top = 123
+    Width = 26
+    Height = 15
+    Caption = 'CRM'
+  end
+  object Label9: TLabel
+    Left = 24
+    Top = 251
+    Width = 25
+    Height = 15
+    Caption = 'Sexo'
+  end
+  object PanelCadMedico: TPanel
     Left = 0
     Top = 0
-    Width = 675
+    Width = 732
     Height = 81
     Align = alTop
-    TabOrder = 0
-    ExplicitWidth = 671
+    TabOrder = 5
+    ExplicitWidth = 728
     object Label1: TLabel
       Left = 24
       Top = 15
@@ -71,27 +99,27 @@ object FormMedicos: TFormMedicos
       TabOrder = 0
     end
   end
-  object txtNome: TDBEdit
+  object txtNomeMedico: TDBEdit
     Left = 24
     Top = 208
-    Width = 269
+    Width = 304
     Height = 23
     DataField = 'nome'
     DataSource = DM.DsMedico
     TabOrder = 1
   end
   object txtBusca: TEdit
-    Left = 327
+    Left = 383
     Top = 144
-    Width = 312
+    Width = 320
     Height = 23
-    TabOrder = 2
+    TabOrder = 3
     OnChange = txtBuscaChange
   end
-  object DBComboBox1: TDBComboBox
-    Left = 24
-    Top = 280
-    Width = 145
+  object BoxEspecialidade: TDBComboBox
+    Left = 191
+    Top = 272
+    Width = 137
     Height = 23
     DataField = 'especialidade'
     DataSource = DM.DsMedico
@@ -103,10 +131,10 @@ object FormMedicos: TFormMedicos
       'Psic'#243'logo'
       'Terapeuta Qu'#226'ntico'
       'Urologista')
-    TabOrder = 3
+    TabOrder = 2
   end
   object gridMedico: TDBGrid
-    Left = 327
+    Left = 383
     Top = 173
     Width = 320
     Height = 235
@@ -128,6 +156,7 @@ object FormMedicos: TFormMedicos
         Title.Font.Height = -12
         Title.Font.Name = 'Segoe UI'
         Title.Font.Style = [fsBold]
+        Width = 131
         Visible = True
       end
       item
@@ -142,13 +171,57 @@ object FormMedicos: TFormMedicos
         Visible = True
       end>
   end
-  object DBEdit1: TDBEdit
+  object txtIDMedico: TDBEdit
     Left = 24
     Top = 144
-    Width = 71
+    Width = 137
     Height = 23
     DataField = 'id'
     DataSource = DM.DsMedico
-    TabOrder = 5
+    TabOrder = 0
+  end
+  object BoxTurno: TDBComboBox
+    Left = 24
+    Top = 336
+    Width = 137
+    Height = 23
+    DataField = 'turno'
+    DataSource = DM.DsMedico
+    Items.Strings = (
+      'Manh'#227
+      'Tarde'
+      'Noite')
+    TabOrder = 6
+  end
+  object txtTelefoneMedico: TDBEdit
+    Left = 191
+    Top = 336
+    Width = 133
+    Height = 23
+    DataField = 'telefone_medico'
+    DataSource = DM.DsMedico
+    MaxLength = 15
+    TabOrder = 7
+  end
+  object txtCRM: TDBEdit
+    Left = 191
+    Top = 144
+    Width = 137
+    Height = 23
+    DataField = 'crm'
+    DataSource = DM.DsMedico
+    TabOrder = 8
+  end
+  object BoxSexo: TDBComboBox
+    Left = 24
+    Top = 272
+    Width = 137
+    Height = 23
+    DataField = 'especialidade'
+    DataSource = DM.DsMedico
+    Items.Strings = (
+      'Masculino'
+      'Feminino')
+    TabOrder = 9
   end
 end

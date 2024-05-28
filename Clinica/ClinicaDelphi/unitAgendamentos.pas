@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.Mask;
+  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TFormAgendamentos = class(TForm)
@@ -13,17 +13,31 @@ type
     Label1: TLabel;
     DBNavigator1: TDBNavigator;
     Label2: TLabel;
-    txtId: TDBEdit;
+    txtIDPaciente: TDBEdit;
     Label4: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
+    BoxNomePaciente: TDBLookupComboBox;
     Label3: TLabel;
-    DBEdit1: TDBEdit;
+    txtData: TDBEdit;
     Label5: TLabel;
-    DBEdit2: TDBEdit;
+    txtHora: TDBEdit;
     Label6: TLabel;
     Label7: TLabel;
-    DBLookupComboBox2: TDBLookupComboBox;
-    DBLookupComboBox3: TDBLookupComboBox;
+    BoxNomeMedico: TDBLookupComboBox;
+    BoxEspecialidade: TDBLookupComboBox;
+    Label8: TLabel;
+    DBComboBox1: TDBComboBox;
+    gridConsulta: TDBGrid;
+    GrupoAgendamento: TRadioGroup;
+    labelConsulta: TLabel;
+    txtConsulta: TEdit;
+    botaoConsulta: TButton;
+    Label9: TLabel;
+    Label10: TLabel;
+    gridAgendamento: TDBGrid;
+    txtBusca: TEdit;
+    procedure GrupoAgendamentoClick(Sender: TObject);
+    procedure botaoConsultaClick(Sender: TObject);
+    procedure txtBuscaChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,5 +52,74 @@ implementation
 {$R *.dfm}
 
 uses DBCadastroPacientes;
+
+procedure TFormAgendamentos.botaoConsultaClick(Sender: TObject);
+begin
+    DM.sqlConsulta.Close;    // fechar os elementos da consulta
+    DM.sqlConsulta.SQL.Clear; // limpar as propriedades do comando sql
+
+
+    if (GrupoAgendamento.ItemIndex = 0) then
+      begin
+        DM.sqlConsulta.SQL.Add('SELECT * FROM agendamento WHERE id_paciente = :pConsulta');      // adicionar um novo comando ao sql
+        DM.sqlConsulta.ParamByName('pConsulta').AsString := txtConsulta.Text;
+       end;
+
+
+    if (GrupoAgendamento.ItemIndex = 1) then
+       begin
+        DM.sqlConsulta.SQL.Add('SELECT * FROM agendamento WHERE medico = :pConsulta');
+        DM.sqlConsulta.ParamByName('pConsulta').AsString := txtConsulta.Text;      // adicionar um novo comando ao sql
+       end;
+
+
+    if (GrupoAgendamento.ItemIndex = 2) then
+       begin
+        DM.sqlConsulta.SQL.Add('SELECT * FROM agendamento WHERE data_exame = :pConsulta');
+        DM.sqlConsulta.ParamByName('pConsulta').AsString := txtConsulta.Text;      // adicionar um novo comando ao sql
+       end;
+
+
+     if (GrupoAgendamento.ItemIndex = 3) then
+       begin
+        DM.sqlConsulta.SQL.Add('SELECT * FROM agendamento WHERE especialidade = :pConsulta');
+        DM.sqlConsulta.ParamByName('pConsulta').AsString := txtConsulta.Text;      // adicionar um novo comando ao sql
+       end;
+
+
+
+    DM.sqlConsulta.Open;        // executar este novo comando
+end;
+
+procedure TFormAgendamentos.GrupoAgendamentoClick(Sender: TObject);
+begin
+    if (GrupoAgendamento.ItemIndex = 0)	 then
+       begin
+         labelConsulta.Caption := 'Digite o ID do paciente que deseja buscar:';
+       end;
+
+
+     if (GrupoAgendamento.ItemIndex = 1)	 then
+       begin
+         labelConsulta.Caption := 'Digite o nome do médico que deseja buscar:';
+       end;
+
+
+       if (GrupoAgendamento.ItemIndex = 2)	 then
+       begin
+         labelConsulta.Caption := 'Digite a data do agendamento que deseja buscar:';
+       end;
+
+       if (GrupoAgendamento.ItemIndex = 3)	 then
+       begin
+         labelConsulta.Caption := 'Digite a especialidade do exame que deseja buscar:';
+       end;
+
+end;
+
+procedure TFormAgendamentos.txtBuscaChange(Sender: TObject);
+begin
+       DM.TbAgendamento.Locate('medico',txtBusca.Text,[loPartialKey]);
+end;
 
 end.

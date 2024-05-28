@@ -1,0 +1,76 @@
+unit unitAgendamentos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFormAgendamentos = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    DBNavigator1: TDBNavigator;
+    Label2: TLabel;
+    txtIDPaciente: TDBEdit;
+    Label4: TLabel;
+    BoxNomePaciente: TDBLookupComboBox;
+    Label3: TLabel;
+    txtData: TDBEdit;
+    Label5: TLabel;
+    txtHora: TDBEdit;
+    Label6: TLabel;
+    Label7: TLabel;
+    BoxNomeMedico: TDBLookupComboBox;
+    BoxEspecialidade: TDBLookupComboBox;
+    Label8: TLabel;
+    DBComboBox1: TDBComboBox;
+    gridConsulta: TDBGrid;
+    GrupoAgendamento: TRadioGroup;
+    labelConsulta: TLabel;
+    txtConsulta: TEdit;
+    botaoConsulta: TButton;
+    procedure GrupoAgendamentoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormAgendamentos: TFormAgendamentos;
+
+implementation
+
+{$R *.dfm}
+
+uses DBCadastroPacientes;
+
+procedure TFormAgendamentos.GrupoAgendamentoClick(Sender: TObject);
+begin
+    if (GrupoAgendamento.ItemIndex = 0)	 then
+       begin
+         labelConsulta.Caption := 'Digite o ID do paciente que deseja buscar:';
+       end;
+
+
+     if (GrupoAgendamento.ItemIndex = 1)	 then
+       begin
+         labelConsulta.Caption := 'Digite o nome do médico que deseja buscar:';
+       end;
+
+
+       if (GrupoAgendamento.ItemIndex = 2)	 then
+       begin
+         labelConsulta.Caption := 'Digite a data do agendamento que deseja buscar:';
+       end;
+
+       if (GrupoAgendamento.ItemIndex = 3)	 then
+       begin
+         labelConsulta.Caption := 'Digite a especialidade do exame que deseja buscar:';
+       end;
+
+end;
+
+end.

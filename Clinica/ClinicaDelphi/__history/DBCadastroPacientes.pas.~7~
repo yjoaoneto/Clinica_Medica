@@ -11,29 +11,36 @@ uses
   FireDAC.Comp.Client;
 
 type
-  Txa = class(TDataModule)
+  TDM = class(TDataModule)
     TbPaciente: TFDTable;
     TbMedico: TFDTable;
     DsPaciente: TDataSource;
     DsAgendamento: TDataSource;
     DsMedico: TDataSource;
     ConexaoBD: TFDConnection;
-    TbPacienteid: TIntegerField;
-    TbPacientenome: TStringField;
-    TbPacientecpf: TStringField;
-    TbPacientecelular: TStringField;
-    TbPacientedata_cadastro: TDateField;
     TbAgendamento: TFDTable;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
     TbAgendamentoid: TIntegerField;
     TbAgendamentoid_paciente: TIntegerField;
     TbAgendamentomedico: TStringField;
     TbAgendamentodata_exame: TDateField;
     TbAgendamentohora_exame: TStringField;
     TbAgendamentoespecialidade: TStringField;
+    TbAgendamentoconvenio: TStringField;
+    TbPacienteid: TIntegerField;
+    TbPacientenome: TStringField;
+    TbPacientecpf: TStringField;
+    TbPacientecelular: TStringField;
+    TbPacientedata_cadastro: TDateField;
+    TbPacienteendereco: TStringField;
+    TbPacientebairro: TStringField;
+    TbPacientecep: TStringField;
     TbMedicoid: TIntegerField;
     TbMediconome: TStringField;
     TbMedicoespecialidade: TStringField;
-    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    TbMedicoturno: TStringField;
+    TbMedicocrm: TIntegerField;
+    TbMedicotelefone_medico: TStringField;
     procedure TbPacienteAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }
@@ -42,7 +49,7 @@ type
   end;
 
 var
-  xa: Txa;
+  DM: TDM;
 
 implementation
 
@@ -50,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-procedure Txa.TbPacienteAfterInsert(DataSet: TDataSet);
+procedure TDM.TbPacienteAfterInsert(DataSet: TDataSet);
 begin
     TbPacientedata_cadastro.Value := Date();
 end;

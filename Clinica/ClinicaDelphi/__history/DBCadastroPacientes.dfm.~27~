@@ -25,21 +25,39 @@ object DM: TDM
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
-      EditMask = '###.###.###-##;1;'
+      EditMask = '###.###.###-##;1;_'
       Size = 15
     end
     object TbPacientecelular: TStringField
       FieldName = 'celular'
       Origin = 'celular'
       Required = True
-      EditMask = '(##) #.####-####;1;_'
+      EditMask = '(##)#.####-####;1;_'
       Size = 16
     end
     object TbPacientedata_cadastro: TDateField
       FieldName = 'data_cadastro'
       Origin = 'data_cadastro'
       Required = True
-      EditMask = '##/##/####;1;_'
+    end
+    object TbPacienteendereco: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'endereco'
+      Origin = 'endereco'
+      Size = 150
+    end
+    object TbPacientebairro: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'bairro'
+      Origin = 'bairro'
+      Size = 40
+    end
+    object TbPacientecep: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'cep'
+      Origin = 'cep'
+      EditMask = '#####-###;1;_'
+      Size = 10
     end
   end
   object TbMedico: TFDTable
@@ -53,7 +71,6 @@ object DM: TDM
     object TbMedicoid: TIntegerField
       FieldName = 'id'
       Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object TbMediconome: TStringField
@@ -68,6 +85,27 @@ object DM: TDM
       Required = True
       Size = 25
     end
+    object TbMedicoturno: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'turno'
+      Origin = 'turno'
+      FixedChar = True
+      Size = 5
+    end
+    object TbMedicocrm: TIntegerField
+      FieldName = 'crm'
+      Origin = 'crm'
+      Required = True
+      MaxValue = 4
+      MinValue = 4
+    end
+    object TbMedicotelefone_medico: TStringField
+      FieldName = 'telefone_medico'
+      Origin = 'telefone_medico'
+      Required = True
+      EditMask = '(##)#.####-####;1;_'
+      Size = 16
+    end
   end
   object DsPaciente: TDataSource
     DataSet = TbPaciente
@@ -75,7 +113,6 @@ object DM: TDM
     Top = 384
   end
   object DsAgendamento: TDataSource
-    DataSet = TbAgendamento
     Left = 304
     Top = 384
   end
@@ -93,7 +130,26 @@ object DM: TDM
     Connected = True
     LoginPrompt = False
     Left = 304
-    Top = 128
+    Top = 136
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'C:\Users\joaon\Downloads\APSClinica\Clinica\ClinicaDelphi\libmys' +
+      'ql.dll'
+    Left = 136
+    Top = 88
+  end
+  object sqlConsulta: TFDQuery
+    Connection = ConexaoBD
+    SQL.Strings = (
+      'SELECT * FROM agendamento')
+    Left = 296
+    Top = 320
+  end
+  object DsConsulta: TDataSource
+    DataSet = sqlConsulta
+    Left = 304
+    Top = 440
   end
   object TbAgendamento: TFDTable
     Active = True
@@ -120,6 +176,12 @@ object DM: TDM
       Required = True
       Size = 100
     end
+    object TbAgendamentopaciente: TStringField
+      FieldName = 'paciente'
+      Origin = 'paciente'
+      Required = True
+      Size = 100
+    end
     object TbAgendamentodata_exame: TDateField
       FieldName = 'data_exame'
       Origin = 'data_exame'
@@ -139,12 +201,12 @@ object DM: TDM
       Required = True
       Size = 25
     end
-  end
-  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 
-      'C:\Users\joaon\Downloads\ProjetoAPSClinica\SistemaClinica\Clinic' +
-      'aDelphi\libmysql.dll'
-    Left = 136
-    Top = 88
+    object TbAgendamentoconvenio: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'convenio'
+      Origin = 'convenio'
+      FixedChar = True
+      Size = 15
+    end
   end
 end

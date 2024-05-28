@@ -11,16 +11,24 @@ type
   TFormMedicos = class(TForm)
     Label4: TLabel;
     Label7: TLabel;
-    Panel1: TPanel;
+    PanelCadMedico: TPanel;
     Label1: TLabel;
     DBNavigator1: TDBNavigator;
-    txtNome: TDBEdit;
+    txtNomeMedico: TDBEdit;
     txtBusca: TEdit;
     Label3: TLabel;
-    DBComboBox1: TDBComboBox;
+    BoxEspecialidade: TDBComboBox;
     gridMedico: TDBGrid;
     Label2: TLabel;
-    DBEdit1: TDBEdit;
+    txtIDMedico: TDBEdit;
+    Label5: TLabel;
+    BoxTurno: TDBComboBox;
+    Label6: TLabel;
+    txtTelefoneMedico: TDBEdit;
+    Label8: TLabel;
+    txtCRM: TDBEdit;
+    Label9: TLabel;
+    BoxSexo: TDBComboBox;
     procedure txtBuscaChange(Sender: TObject);
   private
     { Private declarations }

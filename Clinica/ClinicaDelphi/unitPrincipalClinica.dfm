@@ -1,9 +1,10 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Sistema de C'#237'nica M'#233'dica'
-  ClientHeight = 456
-  ClientWidth = 842
+  ClientHeight = 455
+  ClientWidth = 838
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,12 +13,13 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   WindowState = wsMaximized
+  OnCloseQuery = FormCloseQuery
   TextHeight = 15
   object Image1: TImage
     Left = 0
     Top = 97
-    Width = 842
-    Height = 359
+    Width = 838
+    Height = 358
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1171,17 +1173,18 @@ object Form1: TForm1
       23228A28019CA9FF003CD1451401FFD9}
     ExplicitLeft = 1
     ExplicitTop = 102
+    ExplicitWidth = 842
+    ExplicitHeight = 359
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 842
+    Width = 838
     Height = 97
     Align = alTop
     Color = clBtnHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 838
     object BitBtn1: TBitBtn
       Left = 209
       Top = 1
@@ -1874,8 +1877,8 @@ object Form1: TForm1
     end
   end
   object MainMenu1: TMainMenu
-    Left = 232
-    Top = 256
+    Left = 224
+    Top = 264
     object Sistema1: TMenuItem
       Caption = 'Sistema'
       object Sair1: TMenuItem
