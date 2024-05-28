@@ -168,6 +168,7 @@ object FormMedicos: TFormMedicos
         Title.Font.Height = -12
         Title.Font.Name = 'Segoe UI'
         Title.Font.Style = [fsBold]
+        Width = 156
         Visible = True
       end>
   end
@@ -210,6 +211,7 @@ object FormMedicos: TFormMedicos
     Height = 23
     DataField = 'crm'
     DataSource = DM.DsMedico
+    MaxLength = 4
     TabOrder = 8
   end
   object BoxSexo: TDBComboBox
@@ -217,7 +219,7 @@ object FormMedicos: TFormMedicos
     Top = 272
     Width = 137
     Height = 23
-    DataField = 'especialidade'
+    DataField = 'sexo'
     DataSource = DM.DsMedico
     Items.Strings = (
       'Masculino'

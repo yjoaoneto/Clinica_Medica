@@ -92,12 +92,12 @@ object DM: TDM
       FixedChar = True
       Size = 5
     end
-    object TbMedicocrm: TIntegerField
+    object TbMedicocrm: TStringField
+      AutoGenerateValue = arDefault
       FieldName = 'crm'
       Origin = 'crm'
-      Required = True
-      MaxValue = 4
-      MinValue = 4
+      EditMask = '####;1;_'
+      Size = 5
     end
     object TbMedicotelefone_medico: TStringField
       FieldName = 'telefone_medico'
@@ -105,6 +105,13 @@ object DM: TDM
       Required = True
       EditMask = '(##)#.####-####;1;_'
       Size = 16
+    end
+    object TbMedicosexo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'sexo'
+      Origin = 'sexo'
+      FixedChar = True
+      Size = 9
     end
   end
   object DsPaciente: TDataSource
@@ -141,6 +148,7 @@ object DM: TDM
     Top = 88
   end
   object sqlConsulta: TFDQuery
+    Active = True
     Connection = ConexaoBD
     SQL.Strings = (
       'SELECT * FROM agendamento')

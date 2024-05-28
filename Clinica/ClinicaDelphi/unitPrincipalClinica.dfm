@@ -3,8 +3,8 @@ object Form1: TForm1
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Sistema de C'#237'nica M'#233'dica'
-  ClientHeight = 455
-  ClientWidth = 838
+  ClientHeight = 452
+  ClientWidth = 826
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object Form1: TForm1
   object Image1: TImage
     Left = 0
     Top = 97
-    Width = 838
-    Height = 358
+    Width = 826
+    Height = 355
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1179,7 +1179,7 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 838
+    Width = 826
     Height = 97
     Align = alTop
     Color = clBtnHighlight

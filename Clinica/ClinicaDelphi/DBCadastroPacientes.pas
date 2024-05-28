@@ -27,12 +27,6 @@ type
     TbPacienteendereco: TStringField;
     TbPacientebairro: TStringField;
     TbPacientecep: TStringField;
-    TbMedicoid: TIntegerField;
-    TbMediconome: TStringField;
-    TbMedicoespecialidade: TStringField;
-    TbMedicoturno: TStringField;
-    TbMedicocrm: TIntegerField;
-    TbMedicotelefone_medico: TStringField;
     sqlConsulta: TFDQuery;
     DsConsulta: TDataSource;
     TbAgendamento: TFDTable;
@@ -43,6 +37,13 @@ type
     TbAgendamentohora_exame: TStringField;
     TbAgendamentoespecialidade: TStringField;
     TbAgendamentoconvenio: TStringField;
+    TbMedicoid: TIntegerField;
+    TbMediconome: TStringField;
+    TbMedicoespecialidade: TStringField;
+    TbMedicoturno: TStringField;
+    TbMedicocrm: TStringField;
+    TbMedicotelefone_medico: TStringField;
+    TbMedicosexo: TStringField;
     procedure TbPacienteAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }
