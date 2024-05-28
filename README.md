@@ -9,7 +9,7 @@
 
 <h3>Tecnologias utilizadas:</h3>
 <ul>
-  <li>Ambiente de desenvolvimento dop software: Delphi, em tecnologia Pascal</li>
+  <li>Ambiente de desenvolvimento do software: Delphi, em tecnologia Pascal</li>
   <li>Banco de dados: MySql</li>
   <li>Diagrama de classes e padrões: StarUML e brModelo</li>
   <li>Protótipagem de telas: Figma</li>
