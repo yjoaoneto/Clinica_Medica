@@ -53,7 +53,7 @@
 
 <h3>Requisitos não-funcionais</h3>
 <ul>
-  <li>SO compatível com a aplicação windows</li>
+  <li>SO compatível com a aplicação: Windows</li>
   <li>Disponível somente para computadores</li>
   <li>Não necessita de conexão com a rede (utilizado em máquina local)</li>
   <li>Baixo consumo de memória</li>
