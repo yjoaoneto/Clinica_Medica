@@ -64,8 +64,8 @@
 
 <h3>Cenários de uso e Critérios de Aceite</h3>
 <ul>
-  <li>Cadastro de pacientes no sistema, alteração e(ou) exclução de dados no sistema</li>
-  <li>Cadastro de médicos no sistema, alteração e(ou) exclução de dados no sistema</li>
+  <li>Cadastro de pacientes no sistema, alteração e(ou) exclusão de dados no sistema</li>
+  <li>Cadastro de médicos no sistema, alteração e(ou) exclusão de dados no sistema</li>
   <li>Tela de busca de dados no sistema por nome de pacientes e médicos</li>
   <li>Realização de agendamentos de exames com a possibilidade de realizar cancelamentos e(ou) alterações de datas ou horários</li>
   <li>Tela de busca individual de dados por escolha de campo de agendamentos já cadastrados para melhor controle, administração e organização da agenda da clínica</li>
