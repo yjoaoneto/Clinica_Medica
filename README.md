@@ -1,7 +1,5 @@
 <h1>Documentação - Sistema de Clínica Médica</h1>
 
-<h2>Alunos: João Evangelista, Gabriel figueiredo, Luan Victor, Murilo Henrique, Caio Vinícius</h2>
-
 <h3>Resumo do projeto: </h3>
 <p>Decidimos em consenso desenvolver este projeto com a finalidade de servir a alguma clínica médica, facilitando sua administração em relação aos seus pacientes, médicos e os agendamentos e serviços prestados. Estando aberto a receber aprimoramentos futuros de maneira simples.</p>
 
